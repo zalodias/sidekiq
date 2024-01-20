@@ -1,144 +1,146 @@
 ---
 interface Props {
-	title: string;
-	description: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-const description = "O próximo emprego de sonho está ao teu alcance. Nós ajudamos-te a chegar lá";
+const description =
+  "O próximo emprego de sonho está ao teu alcance. Nós ajudamos-te a chegar lá";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Onest&display=swap" rel="stylesheet">
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	@layer default, color, font, space, size, motion;
+  @layer default, color, font, space, size, motion;
 
-	@layer default {
-		*:where(
-				:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
-			) {
-			all: unset;
-			display: revert;
-		}
+  @layer default {
+    *:where(
+        :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+      ) {
+      all: unset;
+      display: revert;
+    }
 
-		*,
-		*::before,
-		*::after {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-			line-height: calc(1em + 8px);
-		}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      line-height: calc(1em + 8px);
+    }
 
-		:where(html) {
-			block-size: 100%;
-		}
+    :where(html) {
+      block-size: 100%;
+    }
 
-		:where(body) {
-			min-block-size: 100%;
-			background-color: var(--color-surface-background-default);
-			color: var(--color-surface-foreground-default);
-		}
+    :where(body) {
+      min-block-size: 100%;
+      background-color: var(--color-surface-background-default);
+      color: var(--color-surface-foreground-default);
+    }
 
-		:where(img, picture, video, canvas, svg) {
-			display: block;
-			max-inline-size: 100%;
-		}
+    :where(img, picture, video, canvas, svg) {
+      display: block;
+      max-inline-size: 100%;
+    }
 
-		:where(input, button, textarea, select) {
-			font: inherit;
-		}
+    :where(input, button, textarea, select) {
+      font: inherit;
+    }
 
-		:where(a, button) {
-			cursor: revert;
-		}
+    :where(a, button) {
+      cursor: revert;
+    }
 
-		:where(ol, ul, menu) {
-			list-style: none;
-		}
+    :where(ol, ul, menu) {
+      list-style: none;
+    }
 
-		::placeholder {
-			color: unset;
-		}
+    ::placeholder {
+      color: unset;
+    }
 
-		::marker {
-			content: initial;
-		}
+    ::marker {
+      content: initial;
+    }
 
-		:where(h1, h2, h3, h4, h5, h6) {
-			font-size: inherit;
-			font-weight: inherit;
-			text-wrap: balance;
-		}
+    :where(h1, h2, h3, h4, h5, h6) {
+      font-size: inherit;
+      font-weight: inherit;
+      text-wrap: balance;
+    }
 
-		:where(p, h1, h2, h3, h4, h5, h6) {
-			overflow-wrap: break-word;
-		}
-	}
+    :where(p, h1, h2, h3, h4, h5, h6) {
+      overflow-wrap: break-word;
+    }
+  }
 
-	@layer color {
-		:root {
-			--hue: 35;
+  @layer color {
+    :root {
+      --hue: 35;
 
-			--color-white: hsl(var(--hue) 8% 100%);
-			--color-gray-50: hsl(var(--hue) 8% 96%);
-			--color-gray-100: hsl(var(--hue) 8% 92%);
-			--color-gray-200: hsl(var(--hue) 8% 88%);
-			--color-gray-300: hsl(var(--hue) 8% 80%);
-			--color-gray-400: hsl(var(--hue) 8% 64%);
-			--color-gray-500: hsl(var(--hue) 8% 48%);
-			--color-gray-600: hsl(var(--hue) 8% 32%);
-			--color-gray-700: hsl(var(--hue) 8% 16%);
-			--color-gray-800: hsl(var(--hue) 8% 12%);
-			--color-gray-900: hsl(var(--hue) 8% 8%);
-		}
+      --color-white: hsl(var(--hue) 8% 100%);
+      --color-gray-50: hsl(var(--hue) 8% 96%);
+      --color-gray-100: hsl(var(--hue) 8% 92%);
+      --color-gray-200: hsl(var(--hue) 8% 88%);
+      --color-gray-300: hsl(var(--hue) 8% 80%);
+      --color-gray-400: hsl(var(--hue) 8% 64%);
+      --color-gray-500: hsl(var(--hue) 8% 48%);
+      --color-gray-600: hsl(var(--hue) 8% 32%);
+      --color-gray-700: hsl(var(--hue) 8% 16%);
+      --color-gray-800: hsl(var(--hue) 8% 12%);
+      --color-gray-900: hsl(var(--hue) 8% 8%);
+    }
 
-		@media (prefers-color-scheme: light) {
-			:root {
-				color-scheme: light;
+    :root {
+      color-scheme: light;
 
-				--color-surface-background-default: var(--color-gray-50);
-				--color-surface-background-strong: var(--color-white);
-				--color-surface-background-subtle: var(--color-gray-100);
+      --color-surface-background-default: var(--color-white);
+      --color-surface-background-strong: var(--color-gray-100);
+      --color-surface-background-subtle: var(--color-gray-50);
 
-				--color-surface-foreground-default: var(--color-gray-800);
-				--color-surface-foreground-strong: var(--color-gray-900);
-				--color-surface-foreground-subtle: var(--color-gray-600);
+      --color-surface-foreground-default: var(--color-gray-800);
+      --color-surface-foreground-strong: var(--color-gray-900);
+      --color-surface-foreground-subtle: var(--color-gray-600);
 
-				--color-surface-border-default: var(--color-gray-50);
-			}
-		}
-	}
+      --color-surface-border-default: var(--color-gray-50);
+      --color-surface-border-subtle: var(--color-gray-100);
+    }
+  }
 
-	@layer font {
-		:root {
-			font-family: "Onest", system-ui;
-			-webkit-font-smoothing: antialiased;
+  @layer font {
+    :root {
+      font-family: "Onest", system-ui;
+      -webkit-font-smoothing: antialiased;
 
-			--font-body-size-smaller: 12px;
-			--font-body-size-small: 14px;
-			--font-body-size-default: 16px;
-			--font-body-size-large: 18px;
-			--font-body-size-larger: 20px;
+      --font-body-size-smaller: 12px;
+      --font-body-size-small: 14px;
+      --font-body-size-default: 16px;
+      --font-body-size-large: 18px;
+      --font-body-size-larger: 20px;
 
-			--font-lead-size-smaller: 24px;
-			--font-lead-size-small: 28px;
-			--font-lead-size-default: 32px;
+      --font-lead-size-smaller: 24px;
+      --font-lead-size-small: 28px;
+      --font-lead-size-default: 32px;
       --font-lead-size-large: 36px;
       --font-lead-size-larger: 40px;
 
@@ -147,26 +149,26 @@ const description = "O próximo emprego de sonho está ao teu alcance. Nós ajud
       --font-display-size-default: 64px;
       --font-display-size-large: 72px;
       --font-display-size-larger: 80px;
-		}
-	}
+    }
+  }
 
-	@layer space {
-		:root {
-			--space-layout-display: grid;
-			--space-layout-inset: 20px;
-			--space-layout-stack: 40px;
-		}
-	}
+  @layer space {
+    :root {
+      --space-layout-display: grid;
+      --space-layout-inset: 20px;
+      --space-layout-stack: 40px;
+    }
+  }
 
-	@layer size {
-		:root {
-			--size-layout: 960px;
-		}
-	}
+  @layer size {
+    :root {
+      --size-layout: 960px;
+    }
+  }
 
-	@layer motion {
-		:root {
-			--motion-transition-duration: 200ms;
-		}
-	}
+  @layer motion {
+    :root {
+      --motion-transition-duration: 200ms;
+    }
+  }
 </style>
