@@ -1,0 +1,36 @@
+---
+interface Props {
+  href: string;
+  variant: string;
+}
+
+const { href, variant } = Astro.props;
+---
+
+<a class=`link link--${variant}` href={href}>
+  <slot />
+</a>
+
+<style>
+  .link {
+    display: inline-flex;
+    transition: all var(--motion-transition-duration);
+  }
+
+  .link--flat {
+    color: var(--color-action-foreground-default-inverse);
+    font-weight: 400;
+  }
+
+  .link--solid {
+    background-color: var(--color-action-background-default);
+    color: var(--color-action-foreground-default);
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 2rem;
+  }
+
+  .link--solid:active {
+    scale: 0.96;
+  }
+</style>
