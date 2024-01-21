@@ -1,25 +1,47 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
+  context?: "neutral" | "brand";
   href: string;
-  variant: string;
+  iconLeading?: string;
+  iconTrailing?: string;
+  variant?: "solid" | "flat";
 }
 
-const { href, variant } = Astro.props;
+const {
+  context = "neutral",
+  href,
+  iconLeading,
+  iconTrailing,
+  variant = "solid",
+} = Astro.props;
 ---
 
-<a class=`link link--${variant}` href={href}>
+<a class=`link link--${context} link--${variant}` href={href}>
+  {iconLeading && <Icon name={iconLeading} />}
   <slot />
+  {iconTrailing && <Icon name={iconTrailing} />}
 </a>
 
 <style>
   .link {
     display: inline-flex;
     inline-size: fit-content;
+    align-items: center;
+    gap: 0.25rem;
     transition: all var(--motion-transition-duration);
   }
 
-  .link--flat {
+  .link--brand {
+    color: var(--color-action-foreground-brand-default);
+  }
+
+  .link--neutral {
     color: var(--color-action-foreground-default-inverse);
+  }
+
+  .link--flat {
     font-weight: 400;
   }
 
