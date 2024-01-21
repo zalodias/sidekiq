@@ -4,15 +4,16 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const description =
-  "O próximo emprego de sonho está ao teu alcance. Nós ajudamos-te a chegar lá";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta
+      name="description"
+      content="O próximo emprego de sonho está ao teu alcance. Nós ajudamos-te a chegar lá"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
