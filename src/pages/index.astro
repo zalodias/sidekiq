@@ -2,22 +2,11 @@
 import Layout from "@/layouts/Layout.astro";
 import Navigation from "@/sections/Navigation.astro";
 import Hero from "@/sections/Hero.astro";
+import Services from "@/sections/Services.astro";
 ---
 
 <Layout title="Sidekiq | Lado a lado na tua carreira">
-  <main class="container">
-    <Navigation />
-    <Hero />
-  </main>
+  <Navigation />
+  <Hero />
+  <Services />
 </Layout>
-
-<style>
-  .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    max-inline-size: 80rem;
-    margin-inline: auto;
-    padding-inline: 1.25rem;
-  }
-</style>
