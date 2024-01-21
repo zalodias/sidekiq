@@ -1,0 +1,57 @@
+---
+import Link from "./Link.astro";
+
+interface Props {
+  action?: string;
+  description: string;
+  title: string;
+}
+
+const { action, description, title } = Astro.props;
+---
+
+<article class="card">
+  <div class="card__content">
+    <h2 class="card__title">{title}</h2>
+    <p class="card__description">
+      {description}
+    </p>
+  </div>
+  {
+    action && (
+      <Link
+        context="brand"
+        href="#"
+        iconTrailing="arrow-up-right"
+        variant="flat"
+      >
+        {action}
+      </Link>
+    )
+  }
+</article>
+
+<style>
+  .card {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--color-surface-background-subtle);
+    border-radius: 0.5rem;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card__description {
+    color: var(--color-surface-foreground-subtle);
+  }
+
+  .card__title {
+    font-size: var(--font-body-size-large);
+    font-weight: 600;
+  }
+</style>
