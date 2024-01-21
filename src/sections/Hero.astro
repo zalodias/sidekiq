@@ -1,3 +1,7 @@
+---
+import Link from "@/components/Link.astro";
+---
+
 <section class="hero">
   <main class="hero__content">
     <h1 class="hero__title">Lado a lado na tua carreira</h1>
@@ -6,11 +10,24 @@
       lá.
     </h2>
   </main>
+  <div class="hero__actions">
+    <Link href="#" variant="solid">Agendar Meeting</Link>
+    <Link href="#" variant="flat">Ver Planos</Link>
+  </div>
 </section>
 
 <style>
   .hero {
-    padding-block: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100vh;
+    padding-block: var(--space-section-inset);
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1.25rem;
   }
 
   .hero__content {
@@ -25,7 +42,7 @@
   .hero__title {
     font-size: var(--font-display-size-smaller);
     font-weight: 400;
-    letter-spacing: -0.04em;
+    letter-spacing: var(--font-display-tracking);
   }
 
   @media (min-width: 640px) {
