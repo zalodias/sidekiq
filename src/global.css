@@ -41,7 +41,7 @@
     cursor: revert;
   }
 
-  :where(ol, ul, menu) {
+  :where(ol, ul, menu, summary) {
     list-style: none;
   }
 
