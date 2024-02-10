@@ -1,0 +1,64 @@
+---
+import Link from "@/components/Link.astro";
+
+interface NavigationItem {
+  path: string;
+  title: string;
+}
+
+interface NavigationList {
+  [key: string]: NavigationItem;
+}
+
+const navigationList: NavigationList = {
+  benefits: {
+    path: "#benefits",
+    title: "Benefícios",
+  },
+
+  services: {
+    path: "#services",
+    title: "Serviços",
+  },
+
+  process: {
+    path: "#process",
+    title: "Processo",
+  },
+
+  plans: {
+    path: "#plans",
+    title: "Planos",
+  },
+
+  about: {
+    path: "#about",
+    title: "Sobre Nós",
+  },
+};
+---
+
+<ul class="navigation-list">
+  {
+    Object.keys(navigationList).map((item) => (
+      <li>
+        <Link href={navigationList[item].path} variant="flat">
+          {navigationList[item].title}
+        </Link>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .navigation-list {
+    display: none;
+    gap: 3rem;
+  }
+
+  @media (min-width: 960px) {
+    .navigation-list {
+      display: flex;
+    }
+  }
+</style>

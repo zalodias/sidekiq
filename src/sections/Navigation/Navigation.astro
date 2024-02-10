@@ -1,24 +1,12 @@
 ---
 import Link from "@/components/Link.astro";
+import NavigationList from "./NavigationList.astro";
 ---
 
 <section class="navigation">
   <nav class="navigation__content">
     <span class="navigation__logo">sidekiq</span>
-    <ul class="navigation__links">
-      <li class="navigation__link">
-        <Link href="#benefits" variant="flat">Benefícios</Link>
-      </li>
-      <li class="navigation__link">
-        <Link href="#services" variant="flat">Serviços</Link>
-      </li>
-      <li class="navigation__link">
-        <Link href="#process" variant="flat">Processo</Link>
-      </li>
-      <li class="navigation__link">
-        <Link href="#plans" variant="flat">Planos</Link>
-      </li>
-    </ul>
+    <NavigationList />
     <Link href="#" variant="solid">Agendar Meeting</Link>
   </nav>
 </section>
@@ -40,11 +28,6 @@ import Link from "@/components/Link.astro";
     backdrop-filter: blur(16px);
   }
 
-  .navigation__links {
-    display: none;
-    gap: 3rem;
-  }
-
   .navigation__logo {
     font-size: var(--font-body-size-large);
     font-weight: 600;
@@ -58,10 +41,6 @@ import Link from "@/components/Link.astro";
       padding-block: 0;
       padding-inline: 0;
       border-radius: 0;
-    }
-
-    .navigation__links {
-      display: flex;
     }
 
     .navigation__logo {
