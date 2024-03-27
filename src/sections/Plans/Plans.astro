@@ -1,0 +1,21 @@
+---
+import Header from "@/components/Header.astro";
+import PlansCard from "@/sections/Plans/PlansCard.astro";
+---
+
+<section class="plans" id="plans">
+  <Header
+    title="Um plano simples para o teu crescimento"
+    subtitle="Um programa único, focado na tua individualidade e adaptado às tuas necessidades"
+  />
+  <PlansCard />
+</section>
+
+<style>
+  .plans {
+    display: flex;
+    flex-direction: column;
+    padding-block: var(--space-section-inset);
+    gap: var(--space-section-stack);
+  }
+</style>

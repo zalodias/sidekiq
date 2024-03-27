@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<li class="plans-card__item">
+  <Icon class="plans-card__icon" name="check" />
+  <span>{title}</span>
+</li>
+
+<style>
+  .plans-card__icon {
+    color: var(--color-foreground-brand);
+  }
+
+  .plans-card__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>
