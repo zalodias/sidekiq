@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="header">
+  <h2 class="header__title">{title}</h2>
+  <h3 class="header__subtitle">{subtitle}</h3>
+</div>
+
+<style>
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .header__subtitle {
+    font-size: var(--font-body-size-large);
+  }
+
+  .header__title {
+    font-size: var(--font-lead-size-default);
+    letter-spacing: var(--font-lead-tracking);
+  }
+</style>
