@@ -1,0 +1,85 @@
+<section class="quote">
+  <figure class="quote__content">
+    <blockquote>
+      <span class="quote__symbol">“</span>
+      <p class="quote__text">
+        As ideias e conselhos foram fundamentais para me ajudar a esclarecer os
+        meus objetivos profissionais e desenvolver um plano estratégico para a
+        minha carreira.
+      </p>
+    </blockquote>
+    <figcaption class="quote__caption">
+      <img
+        class="quote__picture"
+        src="https://xsgames.co/randomusers/assets/avatars/female/14.jpg"
+      />
+      <div class="quote__profile">
+        <div class="quote__author">Joana Martins</div>
+        <div class="quote__divider"></div>
+        <div class="quote__position">CEO na Google</div>
+      </div>
+    </figcaption>
+  </figure>
+</section>
+
+<style>
+  .quote {
+    padding-block: var(--space-section-inset);
+  }
+
+  .quote__author {
+    display: flex;
+    align-items: center;
+  }
+
+  .quote__caption {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .quote__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-inline-size: var(--size-container-default);
+    margin-inline: auto;
+  }
+
+  .quote__divider {
+    border: 1px solid var(--color-border-default);
+    height: 1rem;
+  }
+
+  .quote__picture {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .quote__position {
+    color: var(--color-foreground-subtle);
+  }
+
+  .quote__profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .quote__symbol {
+    font-size: var(--font-display-size-larger);
+  }
+
+  .quote__text {
+    font-size: var(--font-body-size-larger);
+    font-weight: 500;
+  }
+
+  @media (min-width: 60rem) {
+    .quote__text {
+      font-size: var(--font-lead-size-small);
+      letter-spacing: var(--font-lead-tracking);
+    }
+  }
+</style>
