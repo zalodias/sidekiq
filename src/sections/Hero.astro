@@ -11,8 +11,8 @@ import Link from "@/components/Link.astro";
     </h2>
   </main>
   <div class="hero__actions">
-    <Link href="#" variant="solid">Agendar Meeting</Link>
-    <Link href="#" variant="flat">Ver Planos</Link>
+    <Link href="#" context="brand" variant="solid">Agendar Sessão</Link>
+    <Link href="#" context="brand" variant="flat">Ver Planos</Link>
   </div>
 </section>
 
@@ -27,6 +27,7 @@ import Link from "@/components/Link.astro";
 
   .hero__actions {
     display: flex;
+    align-items: center;
     gap: 1.25rem;
   }
 
