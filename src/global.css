@@ -24,8 +24,8 @@
 
   :where(body) {
     min-block-size: 100%;
-    background-color: var(--color-surface-background-default);
-    color: var(--color-surface-foreground-default);
+    background-color: var(--color-background-default);
+    color: var(--color-foreground-default);
   }
 
   :where(img, picture, video, canvas, svg) {
@@ -86,21 +86,19 @@
   :root {
     color-scheme: light;
 
-    --color-surface-background-default: var(--color-white);
-    --color-surface-background-strong: var(--color-neutral-100);
-    --color-surface-background-subtle: var(--color-neutral-50);
-    --color-surface-foreground-default: var(--color-neutral-800);
-    --color-surface-foreground-strong: var(--color-neutral-900);
-    --color-surface-foreground-subtle: var(--color-neutral-600);
-    --color-surface-border-default: var(--color-neutral-200);
-    --color-surface-border-subtle: var(--color-neutral-100);
-    --color-surface-border-strong: var(--color-neutral-300);
-
-    --color-action-background-neutral-default: var(--color-neutral-900);
-    --color-action-foreground-default-neutral: var(--color-neutral-50);
-    --color-action-foreground-default-neutral-inverse: var(--color-neutral-900);
-
-    --color-action-foreground-brand-default: var(--color-brand-500);
+    --color-background-default: var(--color-white);
+    --color-background-inverse: var(--color-neutral-900);
+    --color-background-strong: var(--color-neutral-100);
+    --color-background-subtle: var(--color-neutral-50);
+    --color-background-brand: var(--color-brand-500);
+    --color-foreground-default: var(--color-neutral-800);
+    --color-foreground-inverse: var(--color-neutral-50);
+    --color-foreground-strong: var(--color-neutral-900);
+    --color-foreground-subtle: var(--color-neutral-600);
+    --color-foreground-brand: var(--color-brand-500);
+    --color-border-default: var(--color-neutral-200);
+    --color-border-subtle: var(--color-neutral-100);
+    --color-border-strong: var(--color-neutral-300);
   }
 }
 
