@@ -66,7 +66,7 @@
 
 @layer color {
   :root {
-    --hue: 30;
+    --hue: 240;
 
     --color-white: hsl(var(--hue) 8% 100%);
     --color-neutral-50: hsl(var(--hue) 8% 96%);
@@ -80,7 +80,7 @@
     --color-neutral-800: hsl(var(--hue) 8% 12%);
     --color-neutral-900: hsl(var(--hue) 8% 8%);
 
-    --color-brand-500: hsl(var(--hue) 96% 48%);
+    --color-brand-500: hsl(var(--hue) 96% 64%);
   }
 
   :root {
