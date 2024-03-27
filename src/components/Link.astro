@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
+  class?: string;
   context?: "neutral" | "brand";
   href: string;
   iconLeading?: string;
@@ -10,15 +11,21 @@ interface Props {
 }
 
 const {
+  class: className,
   context = "neutral",
   href,
   iconLeading,
   iconTrailing,
   variant = "solid",
+  ...rest
 } = Astro.props;
 ---
 
-<a class=`link link--${context} link--${variant}` href={href}>
+<a
+  class:list={[`link link--${context} link--${variant}`, className]}
+  href={href}
+  {...rest}
+>
   {iconLeading && <Icon name={iconLeading} />}
   <slot />
   {iconTrailing && <Icon name={iconTrailing} />}
