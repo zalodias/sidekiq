@@ -35,32 +35,41 @@ const {
   .link {
     display: inline-flex;
     inline-size: fit-content;
-    align-items: center;
+    place-content: center;
     gap: 0.25rem;
+    font-weight: 500;
     transition: all var(--motion-transition-duration);
   }
 
-  .link--brand {
-    color: var(--color-foreground-brand-default);
-  }
-
-  .link--neutral {
-    color: var(--color-foreground-default-neutral-inverse);
-  }
-
-  .link--flat {
-    font-weight: 400;
-  }
-
   .link--solid {
-    background-color: var(--color-background-neutral-default);
-    color: var(--color-foreground-default-neutral);
-    font-weight: 500;
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
   }
 
   .link--solid:active {
     scale: 0.96;
+  }
+
+  .link--solid.link--brand {
+    background-color: var(--color-background-brand);
+    color: var(--color-foreground-inverse);
+  }
+
+  .link--solid.link--neutral {
+    background-color: var(--color-background-inverse);
+    color: var(--color-foreground-inverse);
+  }
+
+  .link--flat {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .link--flat.link--brand {
+    color: var(--color-foreground-brand);
+  }
+
+  .link--flat.link--neutral {
+    color: var(--color-foreground-default);
   }
 </style>
