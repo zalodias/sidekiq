@@ -1,0 +1,55 @@
+---
+import Header from "@/components/Header.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="questions">
+  <Header
+    title="Perguntas Frequentes"
+    subtitle="Continuas com dúvidas? Nós temos as respostas!"
+  />
+  <div class="questions__accordion">
+    <details class="questions__accordion-item">
+      <summary class="questions__accordion-item-header">
+        <h4>Quanto tempo demora o processo de preparação para entrevista?</h4>
+        <Icon name="plus" />
+      </summary>
+      <p class="questions__accordion-item-body">
+        Em média, o processo de preparação demora 2 semanas. Queremos que
+        estejas confortável e confiante para a entrevista.
+      </p>
+    </details>
+  </div>
+</section>
+
+<style>
+  .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-inline-size: var(--size-container-default);
+    margin-inline: auto;
+    padding-block: var(--space-section-inset);
+  }
+
+  .questions__accordion-item {
+    display: flex;
+    flex-direction: column;
+    padding-block: 1.25rem;
+    padding-inline: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-background-subtle);
+  }
+
+  .questions__accordion-item[open] {
+    gap: 1rem;
+  }
+
+  .questions__accordion-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--font-body-size-larger);
+    font-weight: 500;
+  }
+</style>
