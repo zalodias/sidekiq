@@ -1,7 +1,8 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import { Icon } from "astro-icon/components";
 
-interface Props {
+interface Props extends HTMLAttributes<"a"> {
   class?: string;
   context?: "neutral" | "brand";
   href: string;
@@ -17,14 +18,14 @@ const {
   iconLeading,
   iconTrailing,
   variant = "solid",
-  ...rest
+  ...props
 } = Astro.props;
 ---
 
 <a
   class:list={[`link link--${context} link--${variant}`, className]}
   href={href}
-  {...rest}
+  {...props}
 >
   {iconLeading && <Icon name={iconLeading} />}
   <slot />
