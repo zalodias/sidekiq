@@ -1,8 +1,9 @@
 ---
 import Link from "@/components/Link.astro";
+import Section from "@/components/Section.astro";
 ---
 
-<section class="hero">
+<Section class="hero" id="hero">
   <main class="hero__content">
     <h1 class="hero__title">Lado a lado na tua carreira</h1>
     <h2 class="hero__subtitle">
@@ -15,22 +16,14 @@ import Link from "@/components/Link.astro";
     <Link
       href="https://cal.com/zalodias/30min"
       context="brand"
-      variant="solid"
-      target="_blank">Agendar Sessão</Link
+      target="_blank"
+      variant="solid">Agendar Sessão</Link
     >
     <Link href="#plans" context="brand" variant="flat">Ver Planos</Link>
   </div>
-</section>
+</Section>
 
 <style>
-  .hero {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    height: 100vh;
-    padding-block: var(--space-section-inset);
-  }
-
   .hero__actions {
     display: flex;
     align-items: center;
@@ -38,7 +31,9 @@ import Link from "@/components/Link.astro";
   }
 
   .hero__content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
   }
 

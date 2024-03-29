@@ -1,9 +1,10 @@
 ---
 import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
 import ServicesCard from "@/sections/Services/ServicesCard.astro";
 ---
 
-<section class="services">
+<Section id="services">
   <Header title="Tudo o que precisas para dares o próximo passo" />
   <div class="services__stack">
     <ServicesCard
@@ -23,17 +24,9 @@ import ServicesCard from "@/sections/Services/ServicesCard.astro";
       description="Destaca-te na rede social mais importante para a tua carreira. Otimizamos o teu perfil pessoal de LinkedIn para alcançares o teu próximo emprego em tempo recorde."
     />
   </div>
-</section>
+</Section>
 
 <style>
-  .services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-section-stack);
-    padding-block: var(--space-section-inset);
-  }
-
   .services__stack {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));

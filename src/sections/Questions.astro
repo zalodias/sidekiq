@@ -1,12 +1,13 @@
 ---
 import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="questions">
+<Section id="questions">
   <Header
     title="Perguntas Frequentes"
-    subtitle="Continuas com dúvidas? Nós temos as respostas!"
+    subtitle="Continuas com dúvidas? Nós temos as respostas."
   />
   <div class="questions__accordion">
     <details class="questions__accordion-item">
@@ -20,18 +21,9 @@ import { Icon } from "astro-icon/components";
       </p>
     </details>
   </div>
-</section>
+</Section>
 
 <style>
-  .questions {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-inline-size: var(--size-container-default);
-    margin-inline: auto;
-    padding-block: var(--space-section-inset);
-  }
-
   .questions__accordion-item {
     display: flex;
     flex-direction: column;

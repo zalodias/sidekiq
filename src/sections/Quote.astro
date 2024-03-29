@@ -1,4 +1,8 @@
-<section class="quote">
+---
+import Section from "@/components/Section.astro";
+---
+
+<Section id="quote">
   <figure class="quote__content">
     <blockquote>
       <span class="quote__symbol">“</span>
@@ -20,13 +24,9 @@
       </div>
     </figcaption>
   </figure>
-</section>
+</Section>
 
 <style>
-  .quote {
-    padding-block: var(--space-section-inset);
-  }
-
   .quote__author {
     display: flex;
     align-items: center;
@@ -42,7 +42,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    max-inline-size: var(--size-container-default);
     margin-inline: auto;
   }
 
