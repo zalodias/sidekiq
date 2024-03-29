@@ -5,12 +5,15 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
 
 <div class="plans-card">
   <div class="plans-card__header">
-    <h4 class="plans-card__title">Plano Kickstart</h4>
+    <div class="plans-card__heading">
+      <h4 class="plans-card__title">Plano Kickstart</h4>
+      <div class="plans-card__badge">Oferta de lançamento</div>
+    </div>
     <p class="plans-card__description">
       O plano que vai garantir a tua próxima oportunidade de emprego
     </p>
-    <h3 class="plans-card__price-value">€145</h3>
   </div>
+  <h3 class="plans-card__price-value">€145</h3>
   <ul class="plans-card__list" role="list">
     <PlansCardItem title="Sessão introdutória" />
     <PlansCardItem title="Pesquisa personalizada de empresa" />
@@ -33,28 +36,25 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
     border: 1px solid var(--color-border-subtle);
   }
 
-  .plans-card__content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .plans-card__divider {
-    display: flex;
+  .plans-card__badge {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-  }
-
-  .plans-card__divider-text {
-    flex-shrink: 0;
+    background-color: hsl(from var(--color-background-brand) h s l / 8%);
     color: var(--color-foreground-brand);
-    font-weight: 600;
+    font-weight: 500;
+    padding-inline: 0.5rem;
+    border-radius: 1rem;
   }
 
   .plans-card__header {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .plans-card__heading {
+    display: flex;
+    justify-content: space-between;
   }
 
   .plans-card__link {
