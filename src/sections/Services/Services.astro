@@ -1,22 +1,24 @@
 ---
-import Card from "@/components/Card.astro";
+import Header from "@/components/Header.astro";
+import ServicesCard from "@/sections/Services/ServicesCard.astro";
 ---
 
 <section class="services">
-  <h1 class="services__title">
-    Tudo o que precisas para dares o próximo passo
-  </h1>
+  <Header title="Tudo o que precisas para dares o próximo passo" />
   <div class="services__stack">
-    <Card
+    <ServicesCard
+      title="Job Matching"
+      description="Delineamos um processo focado e seletivo na tua procura de emprego. Reunimos as tuas preferências e objetivos, e fazemos match com empresas à procura de candidatos com as tuas competências."
+    />
+    <ServicesCard
       title="Preparação para Entrevista"
       description="Melhora a tua narrativa profissional e pessoal. Ajudamos-te a elaborar respostas firmes para perguntas comuns, e treinamos a tua comunicação verbal e não verbal para te destacares em entrevista."
     />
-    <Card
-      title="Criação de Currículo"
+    <ServicesCard
+      title="Revisão de Currículo"
       description="Imagina um currículo que para além de demonstrar as tuas competências, conta a tua história de forma cativante. Um currículo que se destaca da concorrência e capta a atenção do recrutador."
-      action="Ver Exemplos"
     />
-    <Card
+    <ServicesCard
       title="Otimização de LinkedIn"
       description="Destaca-te na rede social mais importante para a tua carreira. Otimizamos o teu perfil pessoal de LinkedIn para alcançares o teu próximo emprego em tempo recorde."
     />
@@ -25,7 +27,9 @@ import Card from "@/components/Card.astro";
 
 <style>
   .services {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: var(--space-section-stack);
     padding-block: var(--space-section-inset);
   }
@@ -41,15 +45,9 @@ import Card from "@/components/Card.astro";
     letter-spacing: var(--font-lead-tracking);
   }
 
-  @media (min-width: 50rem) {
+  @media (min-width: 40rem) {
     .services__stack {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .services__stack {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>
