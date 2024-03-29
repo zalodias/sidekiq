@@ -25,8 +25,8 @@
 
   :where(body) {
     min-block-size: 100%;
-    background-color: var(--color-background-default);
-    color: var(--color-foreground-default);
+    background-color: var(--color-background-subtle);
+    color: var(--color-foreground-strong);
   }
 
   :where(img, picture, video, canvas, svg) {
