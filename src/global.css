@@ -108,25 +108,25 @@
     font-family: "Onest", system-ui;
     -webkit-font-smoothing: antialiased;
 
-    --font-body-size-smaller: 12px;
-    --font-body-size-small: 14px;
-    --font-body-size-default: 16px;
-    --font-body-size-large: 18px;
-    --font-body-size-larger: 20px;
+    --font-body-size-smaller: 0.75rem;
+    --font-body-size-small: 0.875rem;
+    --font-body-size-medium: 1rem;
+    --font-body-size-large: 1.125rem;
+    --font-body-size-larger: 1.25rem;
 
     --font-lead-tracking: -0.02em;
-    --font-lead-size-smaller: 24px;
-    --font-lead-size-small: 28px;
-    --font-lead-size-default: 32px;
-    --font-lead-size-large: 36px;
-    --font-lead-size-larger: 40px;
+    --font-lead-size-smaller: 1.5rem;
+    --font-lead-size-small: 1.75rem;
+    --font-lead-size-medium: 2rem;
+    --font-lead-size-large: 2.25rem;
+    --font-lead-size-larger: 2.5rem;
 
     --font-display-tracking: -0.04em;
-    --font-display-size-smaller: 48px;
-    --font-display-size-small: 56px;
-    --font-display-size-default: 64px;
-    --font-display-size-large: 72px;
-    --font-display-size-larger: 80px;
+    --font-display-size-smaller: 3rem;
+    --font-display-size-small: 3.5rem;
+    --font-display-size-medium: 4rem;
+    --font-display-size-large: 4.5rem;
+    --font-display-size-larger: 5rem;
   }
 }
 
