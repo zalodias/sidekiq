@@ -26,8 +26,9 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
   .plans-card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    max-width: 30rem;
+    gap: 2rem;
+    padding: 2rem;
     border-radius: 2rem;
     border: 1px solid var(--color-border-subtle);
   }
@@ -77,12 +78,12 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
   }
 
   .plans-card__price-value {
-    font-size: var(--font-lead-size-default);
+    font-size: var(--font-lead-size-large);
     font-weight: 600;
   }
 
   .plans-card__title {
-    font-size: var(--font-lead-size-smaller);
+    font-size: var(--font-body-size-larger);
     font-weight: 600;
   }
 </style>
