@@ -151,7 +151,7 @@
 
 @layer size {
   :root {
-    --size-container-default: 60rem;
+    --size-container-default: 80rem;
   }
 }
 
