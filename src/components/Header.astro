@@ -2,12 +2,13 @@
 interface Props {
   title: string;
   subtitle?: string;
+  class?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, class: className, ...props } = Astro.props;
 ---
 
-<div class="header">
+<div class:list={["header", className]} {...props}>
   <h2 class="header__title">{title}</h2>
   <h3 class="header__subtitle">{subtitle}</h3>
 </div>
