@@ -2,6 +2,7 @@
 import Header from "@/components/Header.astro";
 import PlansCard from "@/sections/Plans/PlansCard.astro";
 import Section from "@/components/Section.astro";
+import { plans } from "@/data/plans";
 ---
 
 <Section id="plans">
@@ -9,5 +10,32 @@ import Section from "@/components/Section.astro";
     title="Um plano simples para o teu crescimento"
     subtitle="Um programa único, focado na tua individualidade e adaptado às tuas necessidades"
   />
-  <PlansCard />
+  <div class="plans__content">
+    {
+      plans.map((plan) => (
+        <PlansCard
+          title={plan.title}
+          subtitle={plan.subtitle}
+          price={plan.price}
+          isPopular={plan.isPopular}
+          features={plan.features}
+        />
+      ))
+    }
+  </div>
 </Section>
+
+<style>
+  .plans__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 60rem) {
+    .plans__content {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
