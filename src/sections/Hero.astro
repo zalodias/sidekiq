@@ -4,6 +4,16 @@ import Section from "@/components/Section.astro";
 ---
 
 <Section class="hero" id="hero">
+  <div class="hero__video">
+    <div style="padding:56.25% 0 0 0;position:relative;">
+      <iframe
+        src="https://player.vimeo.com/video/929065188?dnt=1&loop=1&background=1&app_id=58479"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+        title="Sidekick Movie"></iframe>
+      <div class="hero__overlay"></div>
+    </div>
+  </div>
   <main class="hero__content">
     <h1 class="hero__title">Lado a lado na tua carreira</h1>
     <h2 class="hero__subtitle">
@@ -12,7 +22,6 @@ import Section from "@/components/Section.astro";
     </h2>
   </main>
   <div class="hero__actions">
-    <!-- TODO: Update with future Sidekick cal.com link -->
     <Link
       href="https://cal.com/zalodias/30min"
       context="brand"
@@ -34,7 +43,23 @@ import Section from "@/components/Section.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 1rem;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+        to bottom,
+        hsl(from var(--color-background-subtle) h s l / 50%) 100%,
+        hsl(from var(--color-background-subtle) h s l / 50%) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(from var(--color-background-brand) h s l / 20%) 20%,
+        var(--color-background-subtle) 100%
+      );
   }
 
   .hero__subtitle {
@@ -45,6 +70,14 @@ import Section from "@/components/Section.astro";
     font-size: var(--font-display-size-smaller);
     font-weight: 400;
     letter-spacing: var(--font-display-tracking);
+  }
+
+  .hero__video {
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    width: 100vw;
+    margin-inline: calc((-100vw + 100%) / 2);
   }
 
   @media (min-width: 40rem) {
