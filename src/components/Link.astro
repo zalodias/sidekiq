@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<"a"> {
   href: string;
   iconLeading?: string;
   iconTrailing?: string;
-  variant?: "solid" | "flat";
+  variant?: "solid" | "flat" | "outline";
 }
 
 const {
@@ -43,7 +43,8 @@ const {
     transition: all var(--motion-transition-duration);
   }
 
-  .link--solid {
+  .link--solid,
+  .link--outline {
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
   }
@@ -72,6 +73,21 @@ const {
   }
 
   .link--flat.link--neutral {
+    color: var(--color-foreground-default);
+  }
+
+  .link--outline {
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .link--outline.link--brand {
+    border-color: var(--color-border-brand);
+    color: var(--color-foreground-brand);
+  }
+
+  .link--outline.link--neutral {
+    border-color: var(--color-border-default);
     color: var(--color-foreground-default);
   }
 </style>
