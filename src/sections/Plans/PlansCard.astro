@@ -1,27 +1,41 @@
 ---
 import Link from "@/components/Link.astro";
-import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
+import PlansFeature from "@/sections/Plans/PlansFeature.astro";
+
+import type { Plan } from "@/data/plans";
+
+const { title, subtitle, price, isPopular, features } = Astro.props as Plan;
 ---
 
-<div class="plans-card">
-  <div class="plans-card__header">
-    <div class="plans-card__heading">
-      <h4 class="plans-card__title">Plano Kickstart</h4>
-      <div class="plans-card__badge">Oferta de lançamento</div>
+<div class:list={["plans-card", { "plans-card--highlight": isPopular }]}>
+  <div class="plans-card__content">
+    <div class="plans-card__header">
+      <div class="plans-card__heading">
+        <h4
+          class:list={[
+            "plans-card__title",
+            { "plans-card__title--highlight": isPopular },
+          ]}
+        >
+          {title}
+        </h4>
+        {isPopular && <div class="plans-card__badge">Oferta de lançamento</div>}
+      </div>
+      {subtitle && <p class="plans-card__subtitle">{subtitle}</p>}
     </div>
-    <p class="plans-card__description">
-      O plano que vai garantir a tua próxima oportunidade de emprego
-    </p>
+    <div class="plans-card__price">
+      <h3 class="plans-card__amount-current">{price}€</h3>
+      {isPopular && <h4 class="plans-card__amount-slash">185€</h4>}
+    </div>
+    <ul class="plans-card__list" role="list">
+      {features.map((feature) => <PlansFeature name={feature} />)}
+    </ul>
   </div>
-  <h3 class="plans-card__price-value">€145</h3>
-  <ul class="plans-card__list" role="list">
-    <PlansCardItem title="Sessão introdutória" />
-    <PlansCardItem title="Pesquisa personalizada de empresa" />
-    <PlansCardItem title="Análise e criação de currículo" />
-    <PlansCardItem title="2 sessões de preparação para entrevista" />
-  </ul>
-  <Link class="plans-card__link" href="#" variant="solid" context="brand"
-    >Começar Agora</Link
+  <Link
+    class="plans-card__link"
+    href="#"
+    variant={isPopular ? "solid" : "outline"}
+    context="brand">Começar Agora</Link
   >
 </div>
 
@@ -29,8 +43,8 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
   .plans-card {
     display: flex;
     flex-direction: column;
-    max-width: 30rem;
-    gap: 2rem;
+    justify-content: space-between;
+    gap: 4rem;
     padding: 2rem;
     border-radius: 2rem;
     background-color: var(--color-background-default);
@@ -38,14 +52,35 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
     box-shadow: 0px 1px 2px var(--color-border-subtle);
   }
 
+  .plans-card--highlight {
+    border: 2px solid var(--color-border-brand);
+  }
+
+  .plans-card__amount-current {
+    font-size: var(--font-lead-size-large);
+    font-weight: 600;
+  }
+
+  .plans-card__amount-slash {
+    color: var(--color-foreground-brand);
+    font-weight: 500;
+    text-decoration: line-through;
+  }
+
   .plans-card__badge {
     display: inline-flex;
     align-items: center;
     background-color: hsl(from var(--color-background-brand) h s l / 8%);
     color: var(--color-foreground-brand);
+    font-size: var(--font-body-size-small);
     font-weight: 500;
     padding-inline: 0.5rem;
     border-radius: 1rem;
+  }
+
+  .plans-card__content {
+    display: flex;
+    flex-direction: column;
   }
 
   .plans-card__header {
@@ -71,21 +106,21 @@ import PlansCardItem from "@/sections/Plans/PlansCardItem.astro";
 
   .plans-card__price {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    background-color: var(--color-background-subtle);
-    padding: 1rem;
-    border-radius: 1rem;
+    gap: 1rem;
+    padding-block: 2rem;
   }
 
-  .plans-card__price-value {
-    font-size: var(--font-lead-size-large);
-    font-weight: 600;
+  .plans-card__subtitle {
+    color: var(--color-foreground-subtle);
   }
 
   .plans-card__title {
     font-size: var(--font-body-size-larger);
     font-weight: 600;
+  }
+
+  .plans-card__title--highlight {
+    color: var(--color-foreground-brand);
   }
 </style>
