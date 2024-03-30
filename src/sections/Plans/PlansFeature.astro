@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<li class="plans-feature">
+  <Icon class="plans-feature__icon" name="check" />
+  <span class="plans-feature__text">{name}</span>
+</li>
+
+<style>
+  .plans-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .plans-feature__icon {
+    color: var(--color-foreground-brand);
+  }
+
+  .plans-feature__text {
+    color: var(--color-foreground-subtle);
+  }
+</style>
