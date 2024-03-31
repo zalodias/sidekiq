@@ -1,0 +1,36 @@
+---
+import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
+import TestimonialCard from "./TestimonialCard.astro";
+import { testimonials } from "@/data/testimonials";
+---
+
+<Section id="testimonials">
+  <Header title="Pelas palavras dos nossos" highlight="Kickers" />
+  <div class="testimonials__cards">
+    {
+      testimonials.map((testimonial) => (
+        <TestimonialCard
+          quote={testimonial.quote}
+          avatar={testimonial.avatar}
+          name={testimonial.name}
+          position={testimonial.position}
+        />
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .testimonials__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 60rem) {
+    .testimonials__cards {
+      flex-direction: row;
+    }
+  }
+</style>
