@@ -1,15 +1,19 @@
 ---
 interface Props {
   title: string;
+  highlight?: string;
   subtitle?: string;
   class?: string;
 }
 
-const { title, subtitle, class: className, ...props } = Astro.props;
+const { title, highlight, subtitle, class: className, ...props } = Astro.props;
 ---
 
 <div class:list={["header", className]} {...props}>
-  <h2 class="header__title">{title}</h2>
+  <h2 class="header__title">
+    {title}
+    {highlight && <span class="header__highlight">{highlight}</span>}
+  </h2>
   <h3 class="header__subtitle">{subtitle}</h3>
 </div>
 
@@ -19,6 +23,16 @@ const { title, subtitle, class: className, ...props } = Astro.props;
     flex-direction: column;
     gap: 0.75rem;
     text-align: center;
+  }
+
+  .header__highlight {
+    background: linear-gradient(
+      to right,
+      hsl(from var(--color-background-brand) h s l / 8%) 0%,
+      hsl(from var(--color-background-brand) h s l / 0%) 100%
+    );
+    color: var(--color-foreground-brand);
+    padding-inline: 0.5rem;
   }
 
   .header__subtitle {
