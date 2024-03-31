@@ -1,0 +1,50 @@
+---
+import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
+import ProcessCard from "@/sections/Process/ProcessCard.astro";
+import { steps } from "@/data/process";
+---
+
+<Section class="process" id="process">
+  <Header
+    title="Como funciona o processo"
+    subtitle="Optámos por um processo simples para podermos começar a trabalhar juntos e conseguir atingir resultados rapidamente"
+    class="process__header"
+  />
+  <div class="process__cards">
+    {
+      steps.map((step) => (
+        <ProcessCard
+          step={step.step}
+          title={step.title}
+          description={step.description}
+          action={step.action}
+        />
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .process__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .process__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process__header {
+    text-align: start;
+  }
+
+  @media (min-width: 40rem) {
+    .process {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>
