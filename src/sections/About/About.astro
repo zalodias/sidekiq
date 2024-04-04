@@ -1,0 +1,41 @@
+---
+import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
+import AboutCard from "./AboutCard.astro";
+import { abouts } from "@/data/abouts";
+---
+
+<Section id="about">
+  <Header
+    class="about__header"
+    title="Conhece os"
+    highlight="fundadores"
+    subtitle="Somos uma dupla dinâmica apaixonada por ajudar pessoas a atingir o seu potencial profissional."
+  />
+  <div class="about__content">
+    {
+      abouts.map((about) => (
+        <AboutCard
+          name={about.name}
+          position={about.position}
+          description={about.description}
+          image={about.image}
+          link={about.link}
+        />
+      ))
+    }
+  </div>
+</Section>
+<style>
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 40rem) {
+    .about__content {
+      flex-direction: row;
+    }
+  }
+</style>
