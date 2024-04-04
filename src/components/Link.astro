@@ -43,50 +43,49 @@ const {
     transition: all var(--motion-transition-duration);
   }
 
-  .link--solid,
-  .link--outline {
+  :where(.link--solid, .link--outline) {
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
   }
 
-  .link--solid:active {
+  :where(.link--solid:active) {
     scale: 0.96;
   }
 
-  .link--solid.link--brand {
+  :where(.link--solid.link--brand) {
     background-color: var(--color-background-brand);
     color: var(--color-foreground-inverse);
   }
 
-  .link--solid.link--neutral {
+  :where(.link--solid.link--neutral) {
     background-color: var(--color-background-inverse);
     color: var(--color-foreground-inverse);
   }
 
-  .link--flat {
+  :where(.link--flat) {
     background-color: transparent;
     padding: 0;
   }
 
-  .link--flat.link--brand {
+  :where(.link--flat.link--brand) {
     color: var(--color-foreground-brand);
   }
 
-  .link--flat.link--neutral {
+  :where(.link--flat.link--neutral) {
     color: var(--color-foreground-default);
   }
 
-  .link--outline {
+  :where(.link--outline) {
     border-width: 1px;
     border-style: solid;
   }
 
-  .link--outline.link--brand {
+  :where(.link--outline.link--brand) {
     border-color: var(--color-border-brand);
     color: var(--color-foreground-brand);
   }
 
-  .link--outline.link--neutral {
+  :where(.link--outline.link--neutral) {
     border-color: var(--color-border-default);
     color: var(--color-foreground-default);
   }
