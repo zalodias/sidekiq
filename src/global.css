@@ -26,7 +26,7 @@
   :where(body) {
     min-block-size: 100%;
     background-color: var(--color-background-subtle);
-    color: var(--color-foreground-strong);
+    color: var(--color-foreground-default);
   }
 
   :where(img, picture, video, canvas, svg) {
@@ -88,18 +88,18 @@
     color-scheme: light;
 
     --color-background-default: var(--color-white);
-    --color-background-inverse: var(--color-neutral-900);
     --color-background-strong: var(--color-neutral-100);
     --color-background-subtle: var(--color-neutral-50);
+    --color-background-inverse: var(--color-neutral-900);
     --color-background-brand: var(--color-brand-500);
-    --color-foreground-default: var(--color-neutral-800);
-    --color-foreground-inverse: var(--color-neutral-50);
-    --color-foreground-strong: var(--color-neutral-900);
+    --color-foreground-default: var(--color-neutral-900);
+    --color-foreground-strong: var(--color-neutral-800);
     --color-foreground-subtle: var(--color-neutral-600);
+    --color-foreground-inverse: var(--color-neutral-50);
     --color-foreground-brand: var(--color-brand-500);
     --color-border-default: var(--color-neutral-200);
-    --color-border-subtle: var(--color-neutral-100);
     --color-border-strong: var(--color-neutral-300);
+    --color-border-subtle: var(--color-neutral-100);
     --color-border-brand: var(--color-brand-500);
   }
 }
