@@ -1,0 +1,94 @@
+---
+import Link from "@/components/Link.astro";
+import { Icon } from "astro-icon/components";
+
+import type { About } from "@/data/abouts";
+
+const { name, position, description, image, link } = Astro.props as About;
+---
+
+<div class="about-card">
+  <img class="about-card__image" src={image} />
+  <details class="about-card__details">
+    <summary class="about-card__summary">
+      <div class="about-card__content">
+        <p class="about-card__name">{name}</p>
+        <p class="about-card__position">{position}</p>
+      </div>
+      <Icon class="about-card__icon" name="plus" size={24} />
+    </summary>
+    <p class="about-card__description">
+      {description}
+    </p>
+  </details>
+  <Link class="about-card__link" href={link}>
+    <Icon name="arrow-up-right" size={24} />
+  </Link>
+</div>
+
+<style>
+  .about-card {
+    position: relative;
+    max-inline-size: 30rem;
+  }
+
+  .about-card__content {
+    inline-size: 100%;
+  }
+
+  .about-card__description {
+    padding-inline: 1.5rem;
+    padding-block-end: 1rem;
+  }
+
+  .about-card__details {
+    cursor: pointer;
+    position: absolute;
+    inset-block-end: 1rem;
+    inset-inline: 1rem;
+    background-color: hsl(from var(--color-background-default) h s l / 80%);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 1px 0px #fff;
+    border-radius: 1rem;
+  }
+
+  .about-card__icon:has(details[open]) {
+    rotate: 45deg;
+  }
+
+  .about-card__image {
+    border-radius: 2rem;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .about-card__link {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+    inline-size: 4rem;
+    block-size: 4rem;
+    background-color: hsl(from var(--color-background-default) h s l / 80%);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 1px 0px #fff;
+    color: var(--color-foreground-default);
+    backdrop-filter: blur(4px);
+  }
+
+  .about-card__name {
+    font-size: var(--font-body-size-large);
+    font-weight: 500;
+  }
+
+  .about-card__position {
+    color: var(--color-foreground-subtle);
+    font-size: var(--font-body-size-small);
+  }
+
+  .about-card__summary {
+    display: flex;
+    align-items: center;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+  }
+</style>
