@@ -1,19 +1,10 @@
 ---
 import Link from "@/components/Link.astro";
 import Section from "@/components/Section.astro";
+import HeroMarquee from "@/sections/Hero/HeroMarquee.astro";
 ---
 
 <Section class="hero" id="hero">
-  <div class="hero__video">
-    <div style="padding:56.25% 0 0 0;position:relative;">
-      <iframe
-        src="https://player.vimeo.com/video/929065188?dnt=1&loop=1&background=1&app_id=58479"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
-        title="Sidekick Movie"></iframe>
-      <div class="hero__overlay"></div>
-    </div>
-  </div>
   <main class="hero__content">
     <h1 class="hero__title">Lado a lado na tua carreira</h1>
     <h2 class="hero__subtitle">
@@ -30,6 +21,20 @@ import Section from "@/components/Section.astro";
     >
     <Link href="#plans" context="brand" variant="flat">Ver Planos</Link>
   </div>
+  <HeroMarquee class="hero__marquee" duration="20s">
+    <img
+      class="hero__marquee-item"
+      src="https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+    <img
+      class="hero__marquee-item"
+      src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHBlcnNvbiUyMHNtaWxpbmclMjBidXNpbmVzc3xlbnwwfDF8MHx8fDA%3D"
+    />
+    <img
+      class="hero__marquee-item"
+      src="https://images.unsplash.com/photo-1579389082366-6a268f7c20e0?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+  </HeroMarquee>
 </Section>
 
 <style>
@@ -45,6 +50,18 @@ import Section from "@/components/Section.astro";
     align-items: center;
     text-align: center;
     gap: 1rem;
+  }
+
+  .hero__marquee {
+    width: 100vw;
+    margin-inline: calc((-100vw + 100%) / 2);
+  }
+
+  .hero__marquee-item {
+    max-inline-size: min(80vw, 25rem);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 2rem;
   }
 
   .hero__overlay {
@@ -72,15 +89,11 @@ import Section from "@/components/Section.astro";
     letter-spacing: var(--font-display-tracking);
   }
 
-  .hero__video {
-    position: absolute;
-    inset: -1px;
-    z-index: -1;
-    width: 100vw;
-    margin-inline: calc((-100vw + 100%) / 2);
-  }
-
   @media (min-width: 40rem) {
+    .hero {
+      padding-block: calc(var(--space-section-inset) / 2);
+    }
+
     .hero__title {
       font-size: var(--font-display-size-small);
     }
