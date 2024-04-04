@@ -1,20 +1,20 @@
 ---
 import Header from "@/components/Header.astro";
 import Section from "@/components/Section.astro";
-import ProcessCard from "@/sections/Process/ProcessCard.astro";
-import { steps } from "@/data/process";
+import StepsCard from "@/sections/Steps/StepsCard.astro";
+import { steps } from "@/data/steps";
 ---
 
-<Section class="process" id="process">
+<Section class="steps" id="steps">
   <Header
     title="Como funciona o processo"
     subtitle="Optámos por um processo simples para podermos começar a trabalhar juntos e conseguir atingir resultados rapidamente"
-    class="process__header"
+    class="steps__header"
   />
-  <div class="process__cards">
+  <div class="steps__cards">
     {
       steps.map((step) => (
-        <ProcessCard
+        <StepsCard
           step={step.step}
           title={step.title}
           description={step.description}
@@ -26,23 +26,23 @@ import { steps } from "@/data/process";
 </Section>
 
 <style>
-  .process__cards {
+  .steps__cards {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
-  .process__content {
+  .steps__content {
     display: flex;
     flex-direction: column;
   }
 
-  .process__header {
+  .steps__header {
     text-align: start;
   }
 
   @media (min-width: 40rem) {
-    .process {
+    .steps {
       flex-direction: row;
       justify-content: space-between;
     }

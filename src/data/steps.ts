@@ -1,11 +1,11 @@
-export interface Process {
+export interface Step {
   step: string;
   title: string;
   description: string;
   action?: string;
 }
 
-export const steps: Process[] = [
+export const steps: Step[] = [
   {
     step: "01",
     title: "Escolha de plano",

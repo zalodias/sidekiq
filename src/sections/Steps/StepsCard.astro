@@ -1,18 +1,18 @@
 ---
 import Link from "@/components/Link.astro";
 
-import type { Process } from "@/data/process";
+import type { Step } from "@/data/steps";
 
-const { step, title, description, action } = Astro.props as Process;
+const { step, title, description, action } = Astro.props as Step;
 ---
 
-<div class="process-card">
-  <div class="process-card__step">
+<div class="steps-card">
+  <div class="steps-card__step">
     {step}
   </div>
-  <header class="process-card__header">
-    <h2 class="process-card__title">{title}</h2>
-    <p class="process-card__description">
+  <header class="steps-card__header">
+    <h2 class="steps-card__title">{title}</h2>
+    <p class="steps-card__description">
       {description}
     </p>
   </header>
@@ -31,7 +31,7 @@ const { step, title, description, action } = Astro.props as Process;
 </div>
 
 <style>
-  .process-card {
+  .steps-card {
     max-inline-size: 60rem;
     display: flex;
     flex-direction: column;
@@ -43,17 +43,17 @@ const { step, title, description, action } = Astro.props as Process;
     border-radius: 0.75rem;
   }
 
-  .process-card__description {
+  .steps-card__description {
     color: var(--color-foreground-subtle);
   }
 
-  .process-card__header {
+  .steps-card__header {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .process-card__step {
+  .steps-card__step {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -65,7 +65,7 @@ const { step, title, description, action } = Astro.props as Process;
     font-weight: 500;
   }
 
-  .process-card__title {
+  .steps-card__title {
     font-size: var(--font-body-size-large);
     font-weight: 600;
   }
