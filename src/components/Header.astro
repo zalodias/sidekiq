@@ -14,7 +14,7 @@ const { title, highlight, subtitle, class: className, ...props } = Astro.props;
     {title}
     {highlight && <span class="header__highlight">{highlight}</span>}
   </h2>
-  <h3 class="header__subtitle">{subtitle}</h3>
+  {subtitle && <h3 class="header__subtitle">{subtitle}</h3>}
 </div>
 
 <style>
