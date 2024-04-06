@@ -152,7 +152,7 @@
 
 @layer size {
   :root {
-    --size-container-default: 80rem;
+    --size-container: 80rem;
   }
 }
 
