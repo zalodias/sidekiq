@@ -2,13 +2,9 @@
 import { Icon } from "astro-icon/components";
 import Link from "../../components/Link.astro";
 
-interface Props {
-  action?: string;
-  description: string;
-  title: string;
-}
+import type { Service } from "@/data/services";
 
-const { action, description, title } = Astro.props;
+const { title, description, action } = Astro.props as Service;
 ---
 
 <article class="services-card">
