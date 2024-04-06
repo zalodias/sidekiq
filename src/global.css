@@ -153,12 +153,14 @@
 
 @layer space {
   :root {
+    --space-container-inset: 1.25rem;
     --space-section-inset: 5rem;
     --space-section-stack: 2.5rem;
   }
 
   @media (min-width: 40rem) {
     :root {
+      --space-container-inset: 2.5rem;
       --space-section-inset: 7.5rem;
     }
   }
