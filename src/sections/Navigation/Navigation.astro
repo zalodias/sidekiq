@@ -1,11 +1,12 @@
 ---
 import Link from "@/components/Link.astro";
 import NavigationList from "./NavigationList.astro";
+import Logo from "@/components/Logo.astro";
 ---
 
 <section class="navigation">
   <nav class="navigation__content">
-    <span class="navigation__logo">sidekick</span>
+    <Logo />
     <NavigationList />
     <Link href="#" variant="solid" context="brand">Agendar Sessão</Link>
   </nav>
@@ -22,19 +23,10 @@ import NavigationList from "./NavigationList.astro";
     justify-content: space-between;
   }
 
-  .navigation__logo {
-    font-size: var(--font-body-size-large);
-    font-weight: 600;
-  }
-
   @media (min-width: 60rem) {
     .navigation {
       padding-inline: 1rem;
       padding-block: 2rem;
-    }
-
-    .navigation__logo {
-      font-size: var(--font-body-size-larger);
     }
   }
 </style>
