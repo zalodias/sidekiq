@@ -123,11 +123,31 @@
     --font-lead-size-larger: 2.5rem;
 
     --font-display-tracking: -0.04em;
-    --font-display-size-smaller: 3rem;
-    --font-display-size-small: 3.5rem;
-    --font-display-size-medium: 4rem;
-    --font-display-size-large: 4.5rem;
-    --font-display-size-larger: 5rem;
+    --font-display-size-smaller: 2.25rem;
+    --font-display-size-small: 2.5rem;
+    --font-display-size-medium: 3rem;
+    --font-display-size-large: 3.5rem;
+    --font-display-size-larger: 4rem;
+  }
+
+  @media (min-width: 40rem) {
+    :root {
+      --font-display-size-smaller: 2.5rem;
+      --font-display-size-small: 3rem;
+      --font-display-size-medium: 3.5rem;
+      --font-display-size-large: 4rem;
+      --font-display-size-larger: 4.5rem;
+    }
+  }
+
+  @media (min-width: 60rem) {
+    :root {
+      --font-display-size-smaller: 3rem;
+      --font-display-size-small: 3.5rem;
+      --font-display-size-medium: 4rem;
+      --font-display-size-large: 4.5rem;
+      --font-display-size-larger: 5rem;
+    }
   }
 }
 
