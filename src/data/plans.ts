@@ -11,7 +11,7 @@ export const plans: Plan[] = [
     title: "Básico",
     subtitle:
       "O plano essencial, perfeito se estás à procura do teu primeiro trabalho",
-    price: 45,
+    price: 85,
     isPopular: false,
     features: [
       "Revisão de currículo",
@@ -23,7 +23,7 @@ export const plans: Plan[] = [
     title: "Standard",
     subtitle:
       "O plano mais popular, perfeito para dares o próximo passo na tua carreira",
-    price: 145,
+    price: 165,
     isPopular: true,
     features: [
       "Revisão de currículo",
@@ -37,7 +37,7 @@ export const plans: Plan[] = [
     title: "Premium",
     subtitle:
       "O plano completo, perfeito para trabalhares a tua marca pessoal e criares impacto",
-    price: 245,
+    price: 265,
     isPopular: false,
     features: [
       "Revisão de currículo",
