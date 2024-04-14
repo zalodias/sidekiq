@@ -1,0 +1,21 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div class:list={["card", className]} {...props}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    background-color: var(--color-background-default);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 1.25rem;
+    box-shadow: 0px 1px 2px var(--color-border-subtle);
+    padding: 1.25rem;
+  }
+</style>
