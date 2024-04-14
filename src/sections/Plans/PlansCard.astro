@@ -3,11 +3,12 @@ import Link from "@/components/Link.astro";
 import PlansFeature from "@/sections/Plans/PlansFeature.astro";
 
 import type { Plan } from "@/data/plans";
+import Card from "@/components/Card.astro";
 
 const { title, subtitle, price, isPopular, features } = Astro.props as Plan;
 ---
 
-<div class:list={["plans-card", { "plans-card--highlight": isPopular }]}>
+<Card class:list={["plans-card", { "plans-card--highlight": isPopular }]}>
   <div class="plans-card__content">
     <div class="plans-card__header">
       <div class="plans-card__heading">
@@ -37,7 +38,7 @@ const { title, subtitle, price, isPopular, features } = Astro.props as Plan;
     variant={isPopular ? "solid" : "outline"}
     context="brand">Começar Agora</Link
   >
-</div>
+</Card>
 
 <style>
   .plans-card {
@@ -47,9 +48,6 @@ const { title, subtitle, price, isPopular, features } = Astro.props as Plan;
     gap: 4rem;
     padding: 2rem;
     border-radius: 2rem;
-    background-color: var(--color-background-default);
-    border: 1px solid var(--color-border-subtle);
-    box-shadow: 0px 1px 2px var(--color-border-subtle);
   }
 
   .plans-card--highlight {

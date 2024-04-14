@@ -2,11 +2,12 @@
 import { Icon } from "astro-icon/components";
 
 import type { Testimonial } from "@/data/testimonials";
+import Card from "@/components/Card.astro";
 
 const { quote, avatar, name, position } = Astro.props as Testimonial;
 ---
 
-<div class="testimonial-card">
+<Card class="testimonial-card">
   <div class="testimonial-card__rating">
     {Array.from({ length: 5 }, () => <Icon name="star" />)}
   </div>
@@ -20,7 +21,7 @@ const { quote, avatar, name, position } = Astro.props as Testimonial;
       <p class="testimonial-card__position">{position}</p>
     </div>
   </div>
-</div>
+</Card>
 
 <style>
   .testimonial-card {
@@ -28,11 +29,6 @@ const { quote, avatar, name, position } = Astro.props as Testimonial;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1.25rem;
-    background-color: var(--color-background-default);
-    border: 1px solid var(--color-border-subtle);
-    box-shadow: 0px 1px 2px var(--color-border-subtle);
-    border-radius: 0.75rem;
   }
 
   .testimonial-card__author {
